@@ -1,5 +1,10 @@
 header {
     text-align: center;
+    background-image: linear-gradient(to top, $black, transparent), $header-photo;
+    background-size: 100%;
+    background-position-y: 30%;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
 }
 
 .page-title {
@@ -11,7 +16,7 @@ header {
 }
 
 .navbar-container {
-    background-color: rgba(0, 0, 0, 0.5);
+    // background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 0;
 }
 
