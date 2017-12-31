@@ -85,11 +85,16 @@ header {
     padding-bottom: 4px;
     transition: border-bottom 150ms, padding-bottom 150ms, color 150ms; }
     .navbar li:hover {
-      color: #fdfdfd;
       border-bottom: 2px solid #fdfdfd;
       padding-bottom: 2px;
       transition: border-bottom 150ms, padding-bottom 150ms, color 150ms;
       cursor: pointer; }
+    .navbar li a {
+      padding: none;
+      color: #818181;
+      text-decoration: none; }
+      .navbar li a:hover {
+        color: #fdfdfd; }
 
 .fixed {
   position: fixed;
@@ -106,9 +111,21 @@ header {
   display: flex;
   justify-content: space-around;
   padding: 50px 0;
-  background-image: linear-gradient(to right, #000000, transparent), url(src/images/bogbody.jpg);
+  position: relative;
+  overflow: hidden; }
+
+.music-container::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  background-image: linear-gradient(to right, #000000, transparent), linear-gradient(to top, #000000 5%, transparent 80%), url(src/images/bogbody.jpg);
   background-repeat: no-repeat;
-  background-position: right; }
+  background-position: right;
+  height: 100%;
+  width: 80%;
+  background-size: cover;
+  filter: blur(4px); }
 
 iframe {
   width: 350px;
@@ -116,4 +133,8 @@ iframe {
   padding: 10px;
   border-radius: 4px;
   background-color: #fdfdfd;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-top: 30px; }
+
+.music-title {
+  margin-top: 30px; }
