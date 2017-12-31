@@ -81,11 +81,27 @@ __webpack_require__(2);
 "use strict";
 
 
-var thisIsAVariable = void 0;
+// element selectors
+var body = document.querySelector('body');
+var header = document.querySelector('header');
+var navbar = document.querySelector('.navbar-container');
 
-if (thisIsAVariable) {
-    console.log('It worked!');
+// getting initial values for element positions
+var originalNavbarTop = navbar.offsetTop;
+var headerBottom = header.getBoundingClientRect().bottom;
+
+function grabNavbar() {
+    // recalculate distance from top of viewport on scroll
+    var navbarRect = navbar.getBoundingClientRect();
+    var bodyRect = body.getBoundingClientRect();
+    // grabs navbar at top
+    bodyRect.y + originalNavbarTop <= 0 ? navbar.classList.add('fixed') : navbar.classList.remove('fixed');
+    // adds navbar background after header
+    headerBottom + bodyRect.y <= 0 ? navbar.classList.add('nav-shadow') : navbar.classList.remove('nav-shadow');
 }
+
+// event listeners
+document.addEventListener('scroll', grabNavbar);
 
 /***/ }),
 /* 2 */

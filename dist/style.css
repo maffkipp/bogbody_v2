@@ -57,9 +57,12 @@ header {
   text-align: center;
   background-image: linear-gradient(to top, #000000, transparent), url(src/images/cover-photo.jpg);
   background-size: 100%;
-  background-position-y: 38%;
   background-repeat: no-repeat;
-  padding-bottom: 150px; }
+  padding-bottom: 150px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .page-title {
   margin: 0 auto;
@@ -88,18 +91,29 @@ header {
       transition: border-bottom 150ms, padding-bottom 150ms, color 150ms;
       cursor: pointer; }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%; }
+
+.nav-shadow {
+  background-color: rgba(0, 0, 0, 0.85); }
+
 .music-container {
-  background-color: #fdfdfd;
-  color: #000000;
-  margin: 20px 100px;
+  margin: 50px 0;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
-  padding: 50px 0; }
+  padding: 50px 0;
+  background-image: linear-gradient(to right, #000000, transparent), url(src/images/bogbody.jpg);
+  background-repeat: no-repeat;
+  background-position: right; }
 
 iframe {
   width: 350px;
   height: 470px;
   padding: 10px;
   border-radius: 4px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  background-color: #fdfdfd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }

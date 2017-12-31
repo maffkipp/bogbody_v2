@@ -2,9 +2,12 @@ header {
     text-align: center;
     background-image: linear-gradient(to top, $black, transparent), $header-photo;
     background-size: 100%;
-    background-position-y: 38%;
     background-repeat: no-repeat;
     padding-bottom: 150px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .page-title {
@@ -38,4 +41,15 @@ header {
             cursor: pointer;
         }
     }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-shadow {
+    background-color: (rgba(0, 0, 0, 0.85));
 }
