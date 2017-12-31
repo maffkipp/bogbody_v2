@@ -81,6 +81,10 @@ __webpack_require__(2);
 "use strict";
 
 
+__webpack_require__(11);
+
+__webpack_require__(12);
+
 var _smoothScroll = __webpack_require__(8);
 
 var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
@@ -89,31 +93,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var scroll = new _smoothScroll2.default('a[href*="#"]', {
     speed: 700,
-    easing: 'easeInOutCubic'
+    easing: 'easeInOutCubic',
+    offset: 80
 });
 
-// element selectors
 // smooth scroll implementation
-var body = document.querySelector('body');
-var header = document.querySelector('header');
-var navbar = document.querySelector('.navbar-container');
-
-// getting initial values for element positions
-var originalNavbarTop = navbar.offsetTop;
-var headerBottom = header.getBoundingClientRect().bottom - body.getBoundingClientRect().y;
-
-// fixes navbar after title, adds background shadow after header
-function grabNavbar() {
-    var navbarRect = navbar.getBoundingClientRect();
-    var bodyRect = body.getBoundingClientRect();
-
-    bodyRect.y + originalNavbarTop <= 0 ? navbar.classList.add('fixed') : navbar.classList.remove('fixed');
-
-    headerBottom + bodyRect.y <= 0 ? navbar.classList.add('nav-shadow') : navbar.classList.remove('nav-shadow');
-}
-
-// event listeners
-document.addEventListener('scroll', grabNavbar);
+// local js imports
 
 /***/ }),
 /* 2 */
@@ -161,6 +146,69 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// element selectors
+var body = document.querySelector('body');
+var header = document.querySelector('header');
+var navbar = document.querySelector('.navbar-container');
+
+// getting initial values for element positions
+var originalNavbarTop = navbar.offsetTop;
+var headerBottom = header.getBoundingClientRect().bottom - body.getBoundingClientRect().y;
+
+// fixes navbar after title, adds background shadow after header
+function grabNavbar() {
+    var navbarRect = navbar.getBoundingClientRect();
+    var bodyRect = body.getBoundingClientRect();
+
+    bodyRect.y + originalNavbarTop <= 0 ? navbar.classList.add('fixed') : navbar.classList.remove('fixed');
+
+    headerBottom + bodyRect.y <= 0 ? navbar.classList.add('nav-shadow') : navbar.classList.remove('nav-shadow');
+}
+
+// event listeners
+document.addEventListener('scroll', grabNavbar);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var body = document.querySelector('body');
+
+// animations for music player
+var bandcamp = document.querySelector('iframe');
+var originalBandcampTop = bandcamp.offsetTop;
+
+function animateEmbeddedPlayer() {
+    var bodyRect = body.getBoundingClientRect();
+    var classes = bandcamp.classList;
+
+    // swaps out animation classes depending on if the player is in viewport
+    if (bodyRect.y + originalBandcampTop <= 100 && bodyRect.y + originalBandcampTop >= -500) {
+        if (classes.contains('fadeInRight')) {
+            classes.remove('fadeInRight');
+        }
+        classes.add('fadeOutRight');
+    } else {
+        if (classes.contains('fadeOutRight')) {
+            classes.remove('fadeOutRight');
+        }
+        classes.add('fadeInRight');
+    }
+}
+
+document.addEventListener('scroll', animateEmbeddedPlayer);
 
 /***/ })
 /******/ ]);
