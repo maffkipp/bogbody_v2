@@ -8,6 +8,12 @@ body {
     font-size: 3em;
 }
 
+.section-body {
+    font-family: $body-font;
+    font-size: 2em;
+    line-height: 150%;
+}
+
 .full-height {
     min-height: 100vh;
     height: 100vh;

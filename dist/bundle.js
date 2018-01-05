@@ -137,29 +137,40 @@ document.addEventListener('scroll', grabNavbar);
 
 var body = document.querySelector('body');
 
-// animations for music player
-var bandcamp = document.querySelector('iframe');
-var originalBandcampTop = bandcamp.offsetTop;
-
-function animateEmbeddedPlayer() {
+// Function for adding and removing animation classes based on scroll position
+function animationInOut(element, animationIn, animationOut, boundingHeight) {
     var bodyRect = body.getBoundingClientRect();
-    var classes = bandcamp.classList;
+    var classes = element.classList;
 
-    // swaps out animation classes depending on if the player is in viewport
-    if (bodyRect.y + originalBandcampTop <= 100 && bodyRect.y + originalBandcampTop >= -500) {
-        if (classes.contains('fadeInRight')) {
-            classes.remove('fadeInRight');
+    // swaps out animation classes depending on if element is in view
+    if (bodyRect.y + boundingHeight <= 100 && bodyRect.y + boundingHeight >= -500 || bodyRect.y >= -200) {
+        if (classes.contains(animationIn)) {
+            classes.remove(animationIn);
         }
-        classes.add('fadeOutRight');
+        classes.add(animationOut);
     } else {
-        if (classes.contains('fadeOutRight')) {
-            classes.remove('fadeOutRight');
+        if (classes.contains(animationOut)) {
+            classes.remove(animationOut);
         }
-        classes.add('fadeInRight');
+        classes.add(animationIn);
     }
 }
 
+// animations for music player
+var bandcamp = document.querySelector('iframe');
+var musicText = document.querySelector('.music-text-container');
+var originalBandcampTop = bandcamp.offsetTop;
+
+function animateEmbeddedPlayer() {
+    animationInOut(bandcamp, 'fadeInRight', 'fadeOutRight', originalBandcampTop);
+}
+
+function animateMusicText() {
+    animationInOut(musicText, 'fadeInLeft', 'fadeOutLeft', originalBandcampTop);
+}
+
 document.addEventListener('scroll', animateEmbeddedPlayer);
+document.addEventListener('scroll', animateMusicText);
 
 /***/ }),
 /* 4 */

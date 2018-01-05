@@ -53,6 +53,11 @@ body {
   font-family: "Gloria Hallelujah", sans-serif;
   font-size: 3em; }
 
+.section-body {
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 2em;
+  line-height: 150%; }
+
 .full-height {
   min-height: 100vh;
   height: 100vh; }
@@ -137,8 +142,36 @@ iframe {
   border-radius: 4px;
   background-color: #fdfdfd;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  margin-top: 30px;
   align-self: center; }
 
-.music-title {
-  margin-top: 30px; }
+.music-text-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-around;
+  height: 80%; }
+
+.about-container {
+  display: flex;
+  justify-content: right;
+  align-items: center; }
+
+.about-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(to left, #000000, transparent), linear-gradient(to top, #000000 5%, transparent 80%), url(src/images/bogbody.jpg);
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 100%;
+  width: 80%;
+  background-size: cover;
+  filter: blur(4px); }
+
+.about-text-container {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%; }
