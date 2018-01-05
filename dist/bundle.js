@@ -143,34 +143,47 @@ function animationInOut(element, animationIn, animationOut, boundingHeight) {
     var classes = element.classList;
 
     // swaps out animation classes depending on if element is in view
-    if (bodyRect.y + boundingHeight <= 100 && bodyRect.y + boundingHeight >= -500 || bodyRect.y >= -200) {
-        if (classes.contains(animationIn)) {
-            classes.remove(animationIn);
-        }
-        classes.add(animationOut);
-    } else {
+    if (bodyRect.y + boundingHeight <= 200) {
         if (classes.contains(animationOut)) {
             classes.remove(animationOut);
         }
         classes.add(animationIn);
+    } else {
+        if (classes.contains(animationIn)) {
+            classes.remove(animationIn);
+        }
+        classes.add(animationOut);
     }
 }
 
-// animations for music player
+// animations for music section
+var music = document.querySelector('#music');
 var bandcamp = document.querySelector('iframe');
 var musicText = document.querySelector('.music-text-container');
-var originalBandcampTop = bandcamp.offsetTop;
+var originalMusicTop = music.offsetTop;
 
 function animateEmbeddedPlayer() {
-    animationInOut(bandcamp, 'fadeInRight', 'fadeOutRight', originalBandcampTop);
+    animationInOut(bandcamp, 'fadeInRight', 'fadeOutRight', originalMusicTop);
 }
 
 function animateMusicText() {
-    animationInOut(musicText, 'fadeInLeft', 'fadeOutLeft', originalBandcampTop);
+    animationInOut(musicText, 'fadeInLeft', 'fadeOutLeft', originalMusicTop);
 }
 
 document.addEventListener('scroll', animateEmbeddedPlayer);
 document.addEventListener('scroll', animateMusicText);
+
+// animations for about section
+var about = document.querySelector('.about-container');
+var aboutText = document.querySelector('.about-text-container');
+var originalAboutTop = about.offsetTop;
+console.log(originalAboutTop);
+
+function animateAboutText() {
+    animationInOut(aboutText, 'fadeInRight', 'fadeOutRight', originalAboutTop);
+}
+
+document.addEventListener('scroll', animateAboutText);
 
 /***/ }),
 /* 4 */
