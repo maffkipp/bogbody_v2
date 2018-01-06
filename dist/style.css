@@ -60,14 +60,31 @@ body {
 
 .full-height {
   min-height: 100vh;
-  height: 100vh; }
+  height: 100vh;
+  position: relative; }
+
+.arrow-link {
+  color: #818181;
+  transition: color 200ms;
+  position: absolute;
+  width: 100%;
+  text-align: center; }
+  .arrow-link:hover {
+    color: #fdfdfd;
+    transition: color 200ms; }
+
+.arrow-link-down {
+  bottom: 0%; }
+
+.arrow-link-up {
+  top: 5%; }
 
 header {
   text-align: center;
   background-image: linear-gradient(to top, #000000, transparent), url(src/images/cover-photo.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
-  padding-bottom: 150px;
+  margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -90,12 +107,12 @@ header {
   font-size: 2em; }
   .navbar li {
     color: #818181;
-    padding-bottom: 4px;
-    transition: border-bottom 150ms, padding-bottom 150ms, color 150ms; }
+    padding-bottom: 5px;
+    transition: border-bottom 200ms, color 200ms; }
     .navbar li:hover {
-      border-bottom: 2px solid #fdfdfd;
+      border-bottom: 3px solid #fdfdfd;
       padding-bottom: 2px;
-      transition: border-bottom 150ms, padding-bottom 150ms, color 150ms;
+      transition: border-bottom 200ms, color 200ms;
       cursor: pointer; }
     .navbar li a {
       padding: none;
@@ -114,13 +131,12 @@ header {
   background-color: rgba(0, 0, 0, 0.85); }
 
 .music-container {
-  margin: 50px 0;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
-  padding: 50px 0;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 150px; }
 
 .music-container::before {
   content: '';
@@ -153,8 +169,10 @@ iframe {
 
 .about-container {
   display: flex;
-  justify-content: right;
-  align-items: center; }
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+  overflow: hidden; }
 
 .about-container::before {
   content: '';
@@ -170,8 +188,13 @@ iframe {
   filter: blur(4px); }
 
 .about-text-container {
-  height: 70%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 60%; }
+  .about-text-container p {
+    margin-right: 10%; }
+
+.videos-container {
+  display: flex; }

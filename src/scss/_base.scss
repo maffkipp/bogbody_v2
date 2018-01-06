@@ -17,4 +17,25 @@ body {
 .full-height {
     min-height: 100vh;
     height: 100vh;
+    position: relative;
+}
+
+.arrow-link {
+    color: $grey;
+    transition: color 200ms;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    &:hover {
+        color: $white;
+        transition: color 200ms;
+    }
+}
+
+.arrow-link-down {
+    bottom: 0%;
+}
+
+.arrow-link-up {
+    top: 5%;
 }

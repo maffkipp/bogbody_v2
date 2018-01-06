@@ -106,27 +106,29 @@ var scroll = new _smoothScroll2.default('a[href*="#"]', {
 "use strict";
 
 
-// element selectors
-var body = document.querySelector('body');
-var header = document.querySelector('header');
-var navbar = document.querySelector('.navbar-container');
+(function () {
+    // element selectors
+    var body = document.querySelector('body');
+    var header = document.querySelector('header');
+    var navbar = document.querySelector('.navbar-container');
 
-// getting initial values for element positions
-var originalNavbarTop = navbar.offsetTop;
-var headerBottom = header.getBoundingClientRect().bottom - body.getBoundingClientRect().y;
+    // getting initial values for element positions
+    var originalNavbarTop = navbar.offsetTop;
+    var headerBottom = header.getBoundingClientRect().bottom - body.getBoundingClientRect().y;
 
-// fixes navbar after title, adds background shadow after header
-function grabNavbar() {
-    var navbarRect = navbar.getBoundingClientRect();
-    var bodyRect = body.getBoundingClientRect();
+    // fixes navbar after title, adds background shadow after header
+    function grabNavbar() {
+        var navbarRect = navbar.getBoundingClientRect();
+        var bodyRect = body.getBoundingClientRect();
 
-    bodyRect.y + originalNavbarTop <= 0 ? navbar.classList.add('fixed') : navbar.classList.remove('fixed');
+        bodyRect.y + originalNavbarTop <= 0 ? navbar.classList.add('fixed') : navbar.classList.remove('fixed');
 
-    headerBottom + bodyRect.y <= 0 ? navbar.classList.add('nav-shadow') : navbar.classList.remove('nav-shadow');
-}
+        headerBottom + bodyRect.y <= 0 ? navbar.classList.add('nav-shadow') : navbar.classList.remove('nav-shadow');
+    }
 
-// event listeners
-document.addEventListener('scroll', grabNavbar);
+    // event listeners
+    document.addEventListener('scroll', grabNavbar);
+})();
 
 /***/ }),
 /* 3 */
@@ -135,55 +137,60 @@ document.addEventListener('scroll', grabNavbar);
 "use strict";
 
 
-var body = document.querySelector('body');
+(function () {
+    var body = document.querySelector('body');
 
-// Function for adding and removing animation classes based on scroll position
-function animationInOut(element, animationIn, animationOut, boundingHeight) {
-    var bodyRect = body.getBoundingClientRect();
-    var classes = element.classList;
+    // Function for adding and removing animation classes based on scroll position
+    function animationInOut(element, animationIn, animationOut, boundingHeight) {
+        var bodyRect = body.getBoundingClientRect();
+        var classes = element.classList;
 
-    // swaps out animation classes depending on if element is in view
-    if (bodyRect.y + boundingHeight <= 200) {
-        if (classes.contains(animationOut)) {
-            classes.remove(animationOut);
+        // swaps out animation classes depending on if element is in view
+        if (bodyRect.y + boundingHeight <= 200) {
+            if (classes.contains(animationOut)) {
+                classes.remove(animationOut);
+            }
+            classes.add(animationIn);
+        } else {
+            if (classes.contains(animationIn)) {
+                classes.remove(animationIn);
+            }
+            classes.add(animationOut);
         }
-        classes.add(animationIn);
-    } else {
-        if (classes.contains(animationIn)) {
-            classes.remove(animationIn);
-        }
-        classes.add(animationOut);
     }
-}
 
-// animations for music section
-var music = document.querySelector('#music');
-var bandcamp = document.querySelector('iframe');
-var musicText = document.querySelector('.music-text-container');
-var originalMusicTop = music.offsetTop;
+    // animations for music section
+    (function () {
+        var music = document.querySelector('#music');
+        var bandcamp = document.querySelector('iframe');
+        var musicText = document.querySelector('.music-text-container');
+        var originalMusicTop = music.offsetTop;
 
-function animateEmbeddedPlayer() {
-    animationInOut(bandcamp, 'fadeInRight', 'fadeOutRight', originalMusicTop);
-}
+        function animateEmbeddedPlayer() {
+            animationInOut(bandcamp, 'fadeInRight', 'fadeOutRight', originalMusicTop);
+        }
 
-function animateMusicText() {
-    animationInOut(musicText, 'fadeInLeft', 'fadeOutLeft', originalMusicTop);
-}
+        function animateMusicText() {
+            animationInOut(musicText, 'fadeInLeft', 'fadeOutLeft', originalMusicTop);
+        }
 
-document.addEventListener('scroll', animateEmbeddedPlayer);
-document.addEventListener('scroll', animateMusicText);
+        document.addEventListener('scroll', animateEmbeddedPlayer);
+        document.addEventListener('scroll', animateMusicText);
+    })();
 
-// animations for about section
-var about = document.querySelector('.about-container');
-var aboutText = document.querySelector('.about-text-container');
-var originalAboutTop = about.offsetTop;
-console.log(originalAboutTop);
+    // animations for about section
+    (function () {
+        var about = document.querySelector('#about');
+        var aboutText = document.querySelector('.about-text-container');
+        var originalAboutTop = about.offsetTop;
 
-function animateAboutText() {
-    animationInOut(aboutText, 'fadeInRight', 'fadeOutRight', originalAboutTop);
-}
+        function animateAboutText() {
+            animationInOut(aboutText, 'fadeInRight', 'fadeOutRight', originalAboutTop);
+        }
 
-document.addEventListener('scroll', animateAboutText);
+        document.addEventListener('scroll', animateAboutText);
+    })();
+})();
 
 /***/ }),
 /* 4 */
