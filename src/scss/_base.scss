@@ -26,6 +26,7 @@ body {
     position: absolute;
     width: 100%;
     text-align: center;
+    z-index: 1;
     &:hover {
         color: $white;
         transition: color 200ms;
@@ -38,4 +39,20 @@ body {
 
 .arrow-link-up {
     top: 5%;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.sm-links {
+    margin: 10px;
+    color: $grey;
+    transition: color 200ms;
+    &:hover {
+        color: $white;
+        transition: color 200ms;
+    }
 }

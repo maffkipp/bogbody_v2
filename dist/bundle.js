@@ -190,6 +190,19 @@ var scroll = new _smoothScroll2.default('a[href*="#"]', {
 
         document.addEventListener('scroll', animateAboutText);
     })();
+
+    // animations for youtube section
+    (function () {
+        var videos = document.querySelector('#videos');
+        var youtubeContainer = document.querySelector('.youtube-container');
+        var originalVideosTop = videos.offsetTop;
+
+        function animateVideosText() {
+            animationInOut(youtubeContainer, 'fadeInUp', 'fadeOutDown', originalVideosTop);
+        }
+
+        document.addEventListener('scroll', animateVideosText);
+    })();
 })();
 
 /***/ }),

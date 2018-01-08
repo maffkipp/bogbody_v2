@@ -49,4 +49,17 @@
 
         document.addEventListener('scroll', animateAboutText);
     })();
+
+    // animations for youtube section
+    (() => {
+        const videos = document.querySelector('#videos');
+        const youtubeContainer = document.querySelector('.youtube-container');
+        const originalVideosTop = videos.offsetTop;
+
+        function animateVideosText() {
+            animationInOut(youtubeContainer, 'fadeInUp', 'fadeOutDown', originalVideosTop);
+        }
+
+        document.addEventListener('scroll', animateVideosText);
+    })();
 })();

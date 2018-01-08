@@ -1,0 +1,22 @@
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-self: center;
+    margin-top: 15%;
+    width: 60%;
+    height: 40%;
+
+    .schedule-text {
+        align-self: center;
+        font-size: 2em;
+        font-family: $body-font;
+        color: $grey;
+    }
+}
