@@ -274,7 +274,14 @@ header {
   justify-content: center;
   height: 50%; }
   .youtube-container iframe {
-    margin-top: 20%; }
+    margin-top: 20%;
+    width: 560px;
+    height: 315px; }
+
+@media (max-width: 600px) {
+  .youtube-container iframe {
+    width: 280px;
+    height: 157.5px; } }
 
 .schedule-container {
   display: flex;
