@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "build": "webpack --progress --hide-modules",
-    "start": "webpack --watch --progress --colors",
-    "dev": "webpack-dev-server --content-base /dist"
+    "start": "webpack --watch --progress --colors"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
