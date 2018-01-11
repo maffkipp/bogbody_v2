@@ -56,3 +56,17 @@ footer {
         transition: color 200ms;
     }
 }
+
+
+// Media Queries
+@media (max-width: $desktop-bp) {
+    .section-body {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: $tablet-bp) {
+    .arrow-link-up {
+        top: 0%;
+    }
+}

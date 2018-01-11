@@ -93,6 +93,14 @@ footer {
     color: #fdfdfd;
     transition: color 200ms; }
 
+@media (max-width: 1000px) {
+  .section-body {
+    font-size: 1.5em; } }
+
+@media (max-width: 800px) {
+  .arrow-link-up {
+    top: 0%; } }
+
 header {
   text-align: center;
   background-image: linear-gradient(to top, #000000, transparent), url(src/images/cover-photo.jpg);
@@ -197,6 +205,17 @@ header {
   align-self: center;
   justify-content: space-around;
   height: 80%; }
+
+@media (max-width: 800px) {
+  .music-container {
+    flex-direction: column;
+    justify-content: center; }
+  .bandcamp-embed {
+    height: 42px;
+    padding: 0;
+    border-radius: 0; }
+  .music-text-container {
+    height: 50%; } }
 
 .about-container {
   display: flex;

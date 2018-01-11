@@ -85,19 +85,21 @@ __webpack_require__(2);
 
 __webpack_require__(3);
 
+__webpack_require__(14);
+
 var _smoothScroll = __webpack_require__(4);
 
 var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// local js imports
 var scroll = new _smoothScroll2.default('a[href*="#"]', {
     speed: 700,
     easing: 'easeInOutCubic'
 });
 
 // smooth scroll implementation
-// local js imports
 
 /***/ }),
 /* 2 */
@@ -246,6 +248,39 @@ module.exports = g;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function () {
+    var bandcamp = document.querySelector('.bandcamp-embed');
+
+    function setBandcampType() {
+        if (window.innerWidth <= 800) {
+            if (bandcamp.getAttribute('src') !== 'https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/') {
+                bandcamp.setAttribute('src', 'https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/');
+            }
+        } else {
+            if (bandcamp.getAttribute('src') !== 'https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/') {
+                bandcamp.setAttribute('src', 'https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/');
+            }
+        }
+    }
+
+    window.addEventListener('resize', setBandcampType);
+    window.onload(setBandcampType());
+})();
 
 /***/ })
 /******/ ]);

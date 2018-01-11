@@ -1,6 +1,7 @@
 // local js imports
 import './navScroll.js';
 import './animations.js';
+import './mediaQueries.js';
 
 // smooth scroll implementation
 import SmoothScroll from 'smooth-scroll';
