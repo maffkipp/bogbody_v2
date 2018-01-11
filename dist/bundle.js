@@ -286,7 +286,7 @@ module.exports = g;
 
     // calls function on resize and page load
     window.addEventListener('resize', setBandcampType);
-    window.onload(setBandcampType());
+    window.addEventListener('DOMContentLoaded', setBandcampType);
 })();
 
 /***/ })

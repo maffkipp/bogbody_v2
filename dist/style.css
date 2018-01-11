@@ -101,6 +101,10 @@ footer {
   .arrow-link-up {
     top: 0%; } }
 
+@media (max-width: 600px) {
+  .section-body {
+    font-size: 1em; } }
+
 header {
   text-align: center;
   background-image: linear-gradient(to top, #000000, transparent), url(src/images/cover-photo.jpg);
@@ -249,6 +253,14 @@ header {
   width: 60%; }
   .about-text-container p {
     margin-right: 10%; }
+
+@media (max-width: 1000px) {
+  .about-container {
+    justify-content: center; }
+  .about-text-container {
+    width: 80%; }
+    .about-text-container p {
+      margin-right: 0; } }
 
 .video-container {
   display: flex;

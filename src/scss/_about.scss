@@ -33,3 +33,15 @@
         margin-right: 10%;
     }
 }
+
+@media (max-width: $desktop-bp) {
+    .about-container {
+        justify-content: center;
+    }
+    .about-text-container {
+        width: 80%;
+        p {
+            margin-right: 0;
+        }
+    }
+}

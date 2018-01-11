@@ -70,3 +70,9 @@ footer {
         top: 0%;
     }
 }
+
+@media (max-width: $mobile-bp) {
+    .section-body {
+        font-size: 1em;
+    }
+}
