@@ -59,14 +59,6 @@
     }
 }
 
-@media (max-height: $tablet-bp) {
-    .bandcamp-embed {
-        height: 120px;
-        padding: 0;
-        border-radius: 0;
-    }
-}
-
 @media (max-width: $mobile-bp) {
     .bandcamp-embed {
         height: 42px;
@@ -76,6 +68,8 @@
 @media (max-height: $mobile-bp) {
     .bandcamp-embed {
         height: 42px;
+        padding: 0;
+        border-radius: 0;
     }
 }
 

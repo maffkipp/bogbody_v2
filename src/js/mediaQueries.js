@@ -12,7 +12,7 @@
     function setBandcampType() {
         if (window.innerWidth <= 600 || window.innerHeight <= 600) {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/', bandcamp);
-        } else if (window.innerWidth <= 800 || window.innerHeight <= 800) {
+        } else if (window.innerWidth <= 800) {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/', bandcamp);
         } else {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/', bandcamp);
