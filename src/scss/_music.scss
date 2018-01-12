@@ -65,3 +65,9 @@
     }
 }
 
+@media (max-height: $mobile-bp) {
+    .music-text-container {
+        flex-direction: row;
+    }
+}
+
