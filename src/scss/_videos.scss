@@ -26,3 +26,13 @@
         }
     }
 }
+
+@media (max-height: $mobile-bp) {
+    .youtube-container {
+        iframe {
+            width: 280px;
+            height: 157.5px;
+        }
+    }
+}
+

@@ -103,11 +103,17 @@ footer {
 
 @media (max-width: 600px) {
   .section-body {
-    font-size: 1em; } }
+    font-size: 1em; }
+  .section-title {
+    text-align: center; } }
 
 @media (max-height: 600px) {
+  .section-body {
+    font-size: 1em; }
   .section-title {
-    font-size: 2em; } }
+    font-size: 2em; }
+  .arrow-link-up {
+    top: 0%; } }
 
 header {
   text-align: center;
@@ -177,6 +183,10 @@ header {
     padding-bottom: 0;
     font-size: 5em; } }
 
+@media (max-height: 600px) {
+  .navbar {
+    display: none; } }
+
 .music-container {
   border-radius: 4px;
   display: flex;
@@ -225,13 +235,19 @@ header {
   .music-text-container {
     height: 50%; } }
 
+@media (max-height: 800px) {
+  .bandcamp-embed {
+    height: 120px;
+    padding: 0;
+    border-radius: 0; } }
+
 @media (max-width: 600px) {
   .bandcamp-embed {
     height: 42px; } }
 
 @media (max-height: 600px) {
-  .music-text-container {
-    flex-direction: row; } }
+  .bandcamp-embed {
+    height: 42px; } }
 
 .about-container {
   display: flex;
@@ -291,6 +307,11 @@ header {
     width: 280px;
     height: 157.5px; } }
 
+@media (max-height: 600px) {
+  .youtube-container iframe {
+    width: 280px;
+    height: 157.5px; } }
+
 .schedule-container {
   display: flex;
   flex-direction: column; }
@@ -304,8 +325,21 @@ header {
   margin-top: 15%;
   width: 60%;
   height: 40%; }
-  .schedule-text-container .schedule-text {
-    align-self: center;
-    font-size: 2em;
-    font-family: "Gloria Hallelujah", sans-serif;
-    color: #818181; }
+
+.schedule-text {
+  align-self: center;
+  font-size: 2em;
+  font-family: "Gloria Hallelujah", sans-serif;
+  color: #818181; }
+
+@media (max-width: 600px) {
+  .schedule-text-container {
+    width: 80%;
+    text-align: center;
+    align-items: center; }
+  .schedule-text {
+    font-size: 1.5em; } }
+
+@media (max-height: 600px) {
+  .schedule-text {
+    font-size: 1.5em; } }

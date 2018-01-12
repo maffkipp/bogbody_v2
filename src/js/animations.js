@@ -62,4 +62,17 @@
 
         document.addEventListener('scroll', animateVideosText);
     })();
+
+    // animations for schedule section
+    (() => {
+        const schedule = document.querySelector('#schedule');
+        const scheduleContainer = document.querySelector('.schedule-text-container');
+        const originalScheduleTop = schedule.offsetTop;
+
+        function animateScheduleText() {
+            animationInOut(scheduleContainer, 'fadeInUp', 'fadeOutDown', originalScheduleTop);
+        }
+
+        document.addEventListener('scroll', animateScheduleText);
+    })();
 })();

@@ -75,10 +75,19 @@ footer {
     .section-body {
         font-size: 1em;
     }
+    .section-title {
+        text-align: center;
+    }
 }
 
 @media (max-height: $mobile-bp) {
+    .section-body {
+        font-size: 1em;
+    }
     .section-title {
         font-size: 2em;
+    }
+    .arrow-link-up {
+        top: 0%;
     }
 }

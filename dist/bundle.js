@@ -205,6 +205,19 @@ var scroll = new _smoothScroll2.default('a[href*="#"]', {
 
         document.addEventListener('scroll', animateVideosText);
     })();
+
+    // animations for schedule section
+    (function () {
+        var schedule = document.querySelector('#schedule');
+        var scheduleContainer = document.querySelector('.schedule-text-container');
+        var originalScheduleTop = schedule.offsetTop;
+
+        function animateScheduleText() {
+            animationInOut(scheduleContainer, 'fadeInUp', 'fadeOutDown', originalScheduleTop);
+        }
+
+        document.addEventListener('scroll', animateScheduleText);
+    })();
 })();
 
 /***/ }),
@@ -275,9 +288,9 @@ module.exports = g;
 
     // calls changeSrcAttribute for various screen widths to change bandcamp player type
     function setBandcampType() {
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 600 || window.innerHeight <= 600) {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/', bandcamp);
-        } else if (window.innerWidth <= 800) {
+        } else if (window.innerWidth <= 800 || window.innerHeight <= 800) {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/', bandcamp);
         } else {
             changeSrcAttribute('https://bandcamp.com/EmbeddedPlayer/album=1684609420/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/', bandcamp);

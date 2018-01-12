@@ -84,3 +84,9 @@ header {
         font-size: 5em;
     }
 }
+
+@media (max-height: $mobile-bp) {
+    .navbar {
+        display: none;
+    }
+}

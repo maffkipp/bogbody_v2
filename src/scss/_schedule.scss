@@ -12,11 +12,31 @@
     margin-top: 15%;
     width: 60%;
     height: 40%;
+}
 
+.schedule-text {
+    align-self: center;
+    font-size: 2em;
+    font-family: $body-font;
+    color: $grey;
+}
+
+
+// Media Queries
+
+@media (max-width: $mobile-bp) {
+    .schedule-text-container {
+        width: 80%;
+        text-align: center;
+        align-items: center;
+    }
     .schedule-text {
-        align-self: center;
-        font-size: 2em;
-        font-family: $body-font;
-        color: $grey;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-height: $mobile-bp) {
+    .schedule-text {
+        font-size: 1.5em;
     }
 }
